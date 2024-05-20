@@ -1,8 +1,8 @@
 # !!! this file is under construction an not the final init !!!
 
-# Authy
+# Auththinks from Christian Fröchtenicht
 
-Authy is a comprehensive API service that handles authentication requests, generates tokens, and verifies their validity. It also provides seamless integration for web applications using various frameworks.
+Auththinks is a comprehensive API service that handles authentication requests, generates tokens, and verifies their validity. It also provides seamless integration for web applications using various frameworks.
 
 ## Features
 
@@ -40,8 +40,8 @@ Authy is a comprehensive API service that handles authentication requests, gener
 
    ```bash
 
-   git clone https://github.com/yourusername/authy.git
-   cd authy
+   git clone https://github.com/fchristian1/auththinks.git
+   cd autt
    Install dependencies:
    bash
 
@@ -66,10 +66,10 @@ npm start
 ### Node.js Integration:
 
 ```javascript
-const authy = require("authy");
+const autt = require("autt");
 
 // Example usage
-authy
+autt
   .authenticate("your-token")
   .then((response) => console.log("Authenticated:", response))
   .catch((error) => console.error("Authentication failed:", error));
@@ -89,4 +89,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For any inquiries or support, please reach out to your-email@example.com.
+For any inquiries or support, please reach out to fchristian1@gmx.net
