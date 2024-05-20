@@ -1,6 +1,6 @@
 # !!! this file is under construction an not the final init !!!
 
-# Auththinks from Christian Fröchtenicht
+# Auththinks
 
 Auththinks is a comprehensive API service that handles authentication requests, generates tokens, and verifies their validity. It also provides seamless integration for web applications using various frameworks.
 
