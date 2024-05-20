@@ -39,6 +39,7 @@ Authy is a comprehensive API service that handles authentication requests, gener
 1. **Clone the repository**:
 
    ```bash
+
    git clone https://github.com/yourusername/authy.git
    cd authy
    Install dependencies:
@@ -49,13 +50,14 @@ Authy is a comprehensive API service that handles authentication requests, gener
 
 ## Usage
 
-### Running the API Service:
+2. ### Running the API Service:
 
-bash
+```bash
 
 npm start
+```
 
-### Integrating with a Web Application:
+3. ### Integrating with a Web Application:
 
 #### Detailed integration guides for each framework will be provided in the docs directory.
 
@@ -63,14 +65,15 @@ npm start
 
 ### Node.js Integration:
 
-javascript
-
-const authy = require('authy');
+```javascript
+const authy = require("authy");
 
 // Example usage
-authy.authenticate('your-token')
-.then(response => console.log('Authenticated:', response))
-.catch(error => console.error('Authentication failed:', error));
+authy
+  .authenticate("your-token")
+  .then((response) => console.log("Authenticated:", response))
+  .catch((error) => console.error("Authentication failed:", error));
+```
 
 ## Contributing
 
