@@ -1,4 +1,6 @@
 import crypto from 'crypto';
+import jwt from 'jsonwebtoken';
+
 import {getUnixDate } from '../common/time';
 const SALT = "123456";
 
@@ -6,7 +8,8 @@ export class Account {
     public id: string;
     public email: string;
     private passwordHash: string;
-    private dateCreated: string
+    private dateCreated: string;
+    public lastLogin: string = '';
 
     constructor(id:string, email: string, passwordHash: string, dateCreated: string) {
         this.id = id;
@@ -17,6 +20,29 @@ export class Account {
             this.passwordHash = this.createPasswordHash(passwordHash, dateCreated);   
         }
         this.dateCreated = dateCreated;
+    }
+    ValidateJWT(token: string): boolean {
+        try {
+            jwt.verify(token, SALT);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
+    CreateJWT(): string {
+        var dateNow:string = getUnixDate();
+        this.lastLogin = dateNow;
+        const payload: jwt.JwtPayload = {
+            id: this.id,
+            email: this.email,
+            iat: parseInt(dateNow)
+        };
+        const options:jwt.SignOptions = {
+            algorithm: 'HS512',
+            expiresIn: '1h'
+        };
+        const token = jwt.sign(payload, SALT, options);
+        return token;
     }
     CreateAccount(email: string, password: string): Account {
         var dateCreated: string = getUnixDate();

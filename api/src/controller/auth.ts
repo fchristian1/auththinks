@@ -15,5 +15,5 @@ export const Login = async (req: Request, res: Response) => {
     if (!account.CheckPassword(passworda)) {
         return res.status(400).json({ message: 'Invalid password' });
     }
-    return res.json({ message: 'Login successful' });
+    return res.json({ message: 'Login successful',token: account.CreateJWT() });
 };
